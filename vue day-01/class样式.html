@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .thin {
+            font-weight: 200;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .active {
+            letter-spacing: .5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1 :class="['red','thin']">好嗨哟 , 感觉人生达到了高潮!!!</h1>
+
+        <h1 :class="flay">好嗨哟 , 感觉人生达到了高潮!!!</h1>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flay: { 'red': false, 'thin': false, 'italic': true, 'active': true }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <p v-html='msg2'></p>
+        <div :class="{'red':true,'thin':false}">呵呵呵</div>
+        <input type="button" value="小宁子" :title="mytitle + '小宁子'" @click="clickHandler">
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '吼吼吼 小宁子啃骨头',
+                msg2: '<h1> 我是h1标签 </h1>',
+                mytitle: '我乃二河村村名',
+                red:'11'
+            },
+            methods: {
+                clickHandler() {
+                    alert('我小宁子要上天!!!!')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

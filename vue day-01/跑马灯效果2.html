@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        p{
+            color: #f60;
+            font-size: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="开始" @click="go">
+        <input type="button" value="结束" @click="stop">
+
+        <p v-text="msg"></p>
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '小宁子是想去厕所啃骨头!',
+                timerId: null
+            },
+            methods: {
+                go() {
+                    // 开启定时器之前 先清理一遍定时器 阻止连续点击
+                    clearInterval(this.timerId)
+                    this.timerId = setInterval(() => {
+                        // 获取头
+                        let statr = this.msg.substr(0, 1)
+                        //获取尾
+                        let end = this.msg.substr(1)
+                        //尾拼头 重新拼接到新的字符串 赋值给this.msg
+                        this.msg = end + statr
+                        // console.log(this.msg)
+                    }, 200)
+                },
+                stop() {
+                    clearInterval(this.timerId)
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
