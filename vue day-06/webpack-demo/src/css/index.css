@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/muma.jpg);
+}
+body ul {
+  list-style: none;
+  line-height: 100px;
+  text-align: center;
+  color: red;
+  font-size: 30px;
+}
